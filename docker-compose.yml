@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  backend:
+    image: backenddockerchallenge
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    networks:
+      - my-bridge
+    ports:
+      - 3000:3000
+  frontend:
+    image: frontenddockerchallenge
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    networks:
+      - my-bridge
+    ports:
+      - 5000:5000
+    depends_on: 
+      - backend
+networks:
+  my-bridge:
+    driver: bridge
