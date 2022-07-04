@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table {
+    width: 60vw;
+    background-color: aqua;
+}
+
+th, td {
+    width: 30%;
+}
